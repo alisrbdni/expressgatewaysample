@@ -1,4 +1,4 @@
-nodejs,express app sample for user request management , using express gateway
+nodejs,express app sample for user request management , using nodejs,express, express-gateway.io and openweathermap.org/api 
 
 for installation :
 
@@ -49,5 +49,5 @@ eg credentials create -c USERNAME -t key-auth -q
 * notice each key has a limit of 5 requests per hour 
 (you can change that at ./congif/gateway.config.yml under -rate-limit)
 
-
+developed by sarabadaniali@yahoo.com
 
