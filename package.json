@@ -1,0 +1,10 @@
+{
+  "name": "weather-gateway",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.7.2",
+    "express-gateway": "^1.4.1",
+    "express-session": "^1.15.6"
+  }
+}

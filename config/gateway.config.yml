@@ -1,0 +1,40 @@
+http:
+  port: 3000
+admin:
+  port: 9876
+  hostname: localhost
+apiEndpoints:
+  api:
+    host: localhost
+serviceEndpoints:
+  httpbin:
+    url: 'http://127.0.0.1:8080'
+policies:
+  - basic-auth
+  - cors
+  - expression
+  - key-auth
+  - log
+  - oauth2
+  - proxy
+  - rate-limit
+pipelines:
+  default:
+    apiEndpoints:
+      - api
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+      - key-auth:
+      - rate-limit:
+          - action:
+              # Limit based on user id
+              max: 5
+              windowMs: 3600000
+              rateLimitBy: "${req.user.id}"
+              message: Sorry,requests are limited to five per hour per user
+      - proxy:
+          - action:
+              serviceEndpoint: httpbin 
+              # changeOrigin: true
+  
+
